@@ -3,8 +3,7 @@ foreach($line in Get-Content .\images.properties) {
     $key = $data[0];
     $value = $data[1];
     Write-Output "$key=$value"
-    docker pull ${value}
-    docker tag ${value} ${key}
-    docker push ${key}
-    docker rmi ${value}
+    docker pull ${key}
+    docker tag ${key} ${value}
+    docker push ${value}
 }
