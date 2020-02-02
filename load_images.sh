@@ -1,4 +1,3 @@
-
 cat 'images.properties' | while read line; do
     echo $line
     array=(${line//=/ })
@@ -6,4 +5,3 @@ cat 'images.properties' | while read line; do
     docker tag ${array[0]} ${array[1]}
     docker push ${array[1]}
 done
-
